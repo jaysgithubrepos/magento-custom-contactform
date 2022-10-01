@@ -1,0 +1,97 @@
+<?php
+/* @var $block Gdo\CustomContactForm\Block\Contact */
+?>
+
+<form action="<?php echo $block->getFormAction() ?>" id="custom-contact" method="post"
+      class="custom-contact" data-mage-init='{"validation":{}}'>
+    <input name="form_key" type="hidden" value="<?= $block->getFormKey() ?>"/>
+    <div class="form-title">
+        <?= $block->escapeHtml(__('REQUEST AN ACCOUNT OPENING')) ?>
+    </div>
+    <fieldset class="contact-fieldset">
+        <div class="field full-name required">
+            <label class="label" for="name"> <?= $block->escapeHtml(__('First Name')) ?> </label>
+            <div class="control">
+                <input type="text" name="name" id="name" placeholder="First Name" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" 
+                       class="text-input" data-validate="{required: true, minlength: 3}" />
+            </div>
+        </div>
+        <div class="field full-name required">
+            <label class="label" for="name"> <?= $block->escapeHtml(__('Last Name')) ?> </label>
+            <div class="control">
+                <input type="text" name="last-name" id="name" placeholder="Last Name" title="<?= $block->escapeHtmlAttr(__('Name')) ?>" 
+                       class="text-input" data-validate="{required: true, minlength: 3}" />
+            </div>
+        </div>
+
+        <div class="field email required">
+            <label class="label" for="email"> <?= $block->escapeHtml(__('Email')) ?> </label>
+            <div class="control">
+                <input type="email" placeholder="Email" name="email" id="email" title="<?= $block->escapeHtmlAttr(__('Email')) ?>" 
+                       class="text-input" data-validate="{required: true, 'validate-email': true}" />
+            </div>
+        </div>
+
+        <div class="field phone-number required">
+            <label class="label" for="phone-number"> <?= $block->escapeHtml(__('Phone number')) ?> </label>
+            <div class="control">
+                <input type="number" placeholder="(506) 234-5678" name="phone-number" id="phone-number" title="<?= $block->escapeHtmlAttr(__('Phone number')) ?>" 
+                       class="text-input" data-validate="{required: true}" />
+            </div>
+        </div>
+
+        <div class="field city required">
+            <label class="label" for="company"> <?= $block->escapeHtml(__('Company')) ?> </label>
+            <div class="control">
+                <input type="text" name="company" placeholder="Company" id="company" title="<?= $block->escapeHtmlAttr(__('Company')) ?>" 
+                       class="text-input" data-validate="{required: true, minlength: 3}" />
+            </div>
+        </div>
+        <div class="radio-btn-and-checkbox">
+        <label class="label" for="radio-button"> <?= $block->escapeHtml(__('You Are..')) ?> </label>
+
+        <div class="control">
+
+        <input type="radio" name="department" value="designer" data-validate="{required: true}">
+        <label class="label">  Designer</label><br>
+
+        </div>
+
+        <div class="control">
+
+        <input type="radio" name="department" value="entrepreneur"data-validate="{required: true}">
+        <label class="label">  Entrepreneur / Rénovation</label><br>
+
+        </div>
+
+        <div class="control">
+
+        <input type="radio" name="department" value="deetaillant" data-validate="{required: true}">
+    <label class="label"> Détaillant</label><br>
+
+        </div>
+
+        <div class="control">
+
+        <input type="radio" name="department" value="autre" data-validate="{required: true}">
+    <label class="label">  Autre</label><br>
+
+        </div>
+<div class="control cc-box">
+  
+<input type="checkbox" id="checkbox" name="checkbox" data-validate="{required: true}">
+        <label> 
+J'ai lu et j'accepte les Termes et Conditions ainsi que la Politique de confidentialité. </label>
+
+        </div>
+
+    </fieldset>
+
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
+                <span><?= $block->escapeHtml(__('Submit')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>
